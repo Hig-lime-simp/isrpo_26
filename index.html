@@ -3,23 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lab24-26 - Modern JavaScript</title>
+    <title>Менеджер задач - Lab26</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Конвертер Валют</h1>
-    </div>
-    <div class="container">
-        <div class="MoneyPlace">
-            <input type="number" placeholder="0" id="MoneyInput" class="input">
-            <select id="Fiat" class="fiatList">
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-            </select>
+        <h1>Менеджер задач</h1>
+        <h2>Управляй своими делами</h2>
+        
+        <div class="task-form">
+            <input type="text" id="taskInput" placeholder="Введите новую задачу...">
+            <button id="addTask">Добавить</button>
         </div>
-        <button id="Convert" class="ConvertBtn">Конвертировать</button>
+        
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="active">Активные</button>
+            <button class="filter-btn" data-filter="completed">Завершённые</button>
+        </div>
+        
+        <ul id="taskList">
+        </ul>
+        
+        <div class="stats">
+            <p>Всего задач: <span id="totalTasks">0</span></p>
+            <p>Выполнено: <span id="completedTasks">0</span></p>
+        </div>
     </div>
+    
     <script type="module" src="js/api.js"></script>
 </body>
 </html>
